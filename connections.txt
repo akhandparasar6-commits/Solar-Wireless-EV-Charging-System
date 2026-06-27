@@ -1,0 +1,58 @@
+## Connections
+
+### Voltage Sensor Module → ESP32
+
+| Voltage Sensor Pin | ESP32 Pin |
+|-------------------|-----------|
+| VCC | 3.3V |
+| GND | GND |
+| OUT | GPIO34 |
+
+### I2C LCD (16x2) → ESP32
+
+| LCD Pin | ESP32 Pin |
+|----------|-----------|
+| VCC | 5V |
+| GND | GND |
+| SDA | GPIO21 |
+| SCL | GPIO22 |
+
+## Complete System Connections
+
+```text
+Solar Panel
+      ↓
+Charge Controller
+      ↓
+Rechargeable Battery
+      ↓
+Wireless Transmitter Coil
+      ↓
+Wireless Power Transfer
+      ↓
+Receiver Coil
+      ↓
+Rectifier Circuit
+      ↓
+EV Battery / DC Load
+
+Voltage Sensor OUT  ---> GPIO34 (ESP32)
+Voltage Sensor VCC  ---> 3.3V
+Voltage Sensor GND  ---> GND
+
+LCD SDA             ---> GPIO21
+LCD SCL             ---> GPIO22
+LCD VCC             ---> 5V
+LCD GND             ---> GND
+```
+
+## Pin Summary
+
+| Component | ESP32 Pin |
+|-----------|-----------|
+| Voltage Sensor OUT | GPIO34 |
+| LCD SDA | GPIO21 |
+| LCD SCL | GPIO22 |
+| Voltage Sensor VCC | 3.3V |
+| LCD VCC | 5V |
+| All Grounds | GND |
